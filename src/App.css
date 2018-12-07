@@ -30,3 +30,36 @@
     transform: rotate(360deg);
   }
 }
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.repository-list {
+    width: 400px;
+}
+
+.list-item {
+    border: black 1px solid;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 4px;
+}
+
+.selected-repository {
+    padding-left: 15px;
+}
+.contributor {
+    border: black 1px solid;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 4px;
+    width: 70%;
+}
+
+.avatar-picture{
+    width: 25%;
+}
