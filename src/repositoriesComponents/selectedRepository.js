@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 export class SelectedRepository extends Component{
   render(){
-    const { name, description, clone_url, forks, open_issues, url, watchers, license, contributors } = this.props;
+    const { name, description, clone_url, forks, open_issues, html_url, watchers, license, contributors } = this.props;
     const renderContributor = (contributor) =>(
       <li key={contributor.id} className="contributor">
         <div>
@@ -26,11 +26,17 @@ export class SelectedRepository extends Component{
                   <h1>{name}</h1>
                   <h4>{description}</h4>
                   <p>Open Issues: {open_issues}</p>
-                  <p>See it on the web: <a href={url} target="_blank" rel="noopener noreferrer">{url}</a></p>
+                  <p>See it on the web: <a href={html_url} target="_blank" rel="noopener noreferrer">{html_url}</a></p>
                   <p>This project has {forks} forks</p>
                   <p>Number of watchers: {watchers}</p>
                   <p>License: {license.name}</p>
                   <p>Clone it: {clone_url}</p>
+                  <a className="twitter-share-button"
+                     href={`https://twitter.com/intent/tweet?text=Check%20this%20project%20${html_url}`}
+                     target="_blank" rel="noopener noreferrer"
+                     data-size="large">
+                    <i className="twitter-icon"/>
+                    Share it in Twitter</a>
                   <section>
                     {contributors.length > 0 ? (
                     <Fragment>
